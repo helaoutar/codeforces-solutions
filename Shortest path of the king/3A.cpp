@@ -4,9 +4,9 @@
 
 using namespace std;
 
-
-int main(){
-    string s, t,move1,move2,move3;
+int main()
+{
+    string s, t, move1, move2, move3;
     cin >> s >> t;
     int Max = max((int)(abs(s[0] - t[0])), (int)(abs(s[1] - t[1])));
     int Min = min((int)(abs(s[0] - t[0])), (int)(abs(s[1] - t[1])));

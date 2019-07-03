@@ -1,10 +1,11 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 bool dp[501][501];
 
-int main() {
+int main()
+{
 	ios_base::sync_with_stdio(false);
 	cin.tie(0);
 
@@ -12,25 +13,27 @@ int main() {
 	int n, choc, c;
 	cin >> n >> choc;
 
-	for(int i=0;i<n;i++) {
+	for (int i = 0; i < n; i++)
+	{
 		cin >> c;
 
-		for(int j=500-c;j >= 0;j--)
-			for(int k=0;k<=j;k++)
-				if(dp[j][k]) {
-					dp[j+c][k] = true;
-					dp[j+c][k+c] = true;
+		for (int j = 500 - c; j >= 0; j--)
+			for (int k = 0; k <= j; k++)
+				if (dp[j][k])
+				{
+					dp[j + c][k] = true;
+					dp[j + c][k + c] = true;
 				}
 	}
 
 	vector<int> result;
 
-	for(int k=0;k<=500;k++)
-		if(dp[choc][k])
+	for (int k = 0; k <= 500; k++)
+		if (dp[choc][k])
 			result.push_back(k);
 
 	cout << result.size() << '\n';
-	for(auto c : result)
+	for (auto c : result)
 		cout << c << ' ';
 	cout << '\n';
 	return 0;

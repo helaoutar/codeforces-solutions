@@ -6,13 +6,12 @@ using namespace std;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 
-
 int main()
 {
     int n, m;
     string abc;
     char x, y;
-    cin >> n >> m>>abc;
+    cin >> n >> m >> abc;
     vvi lettres(26);
     for (int i = 0; i < n; i++)
         lettres[abc[i] - 'a'].push_back(i);
@@ -24,7 +23,7 @@ int main()
     }
     for (int i = 0; i < 26; i++)
         for (int j = 0; j < lettres[i].size(); j++)
-            abc[lettres[i][j]] = 'a' +i;
+            abc[lettres[i][j]] = 'a' + i;
 
     cout << abc;
 }

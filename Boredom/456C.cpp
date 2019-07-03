@@ -2,10 +2,12 @@
 using namespace std;
 int n;
 long long f[100001];
-int main(){
-	long long x,maxi=0;
+int main()
+{
+	long long x, maxi = 0;
 	cin >> n;
-	for (int i = 0; i < n; i++){
+	for (int i = 0; i < n; i++)
+	{
 		cin >> x;
 		f[x] += x;
 		maxi = max(maxi, x);

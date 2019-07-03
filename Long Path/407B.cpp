@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-	int n,a;
-	vector<int>A;
+	int n, a;
+	vector<int> A;
 	cin >> n;
 	vector<ull> dp(n, 0);
 	for (int i = 0; i < n; i++)
@@ -18,20 +18,21 @@ int main()
 	{
 		if (A[i] == i)
 			dp[i] = 2;
-		else{
-			for (int j = A[i]; j < i ; j++)
+		else
+		{
+			for (int j = A[i]; j < i; j++)
 				dp[i] = (dp[i] + dp[j]) % 1000000007;
 			dp[i] = (dp[i] + 2);
 		}
-	//	cout << dp[i] << endl;
+		//	cout << dp[i] << endl;
 	}
 	ll ans = 0;
 	for (int i = 0; i < n; i++)
 	{
 		ans = (ans + dp[i]) % 1000000007;
 	}
-	cout << ans <<endl;
-//	system("pause");
+	cout << ans << endl;
+	//	system("pause");
 
 	return 0;
 }

@@ -4,9 +4,9 @@ using namespace std;
 
 int main()
 {
-    int N, M ;
+    int N, M;
     cin >> M >> N;
 
-    cout << (floor(M*N / 2));
+    cout << (floor(M * N / 2));
     return 0;
 }
